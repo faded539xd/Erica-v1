@@ -1,0 +1,733 @@
+if game.PlaceId == 2788229376 then
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+
+    local Window = Rayfield:CreateWindow({
+   Name = "🌟Erica🌟",
+   LoadingTitle = "Example Hub *Note --  This Script Will Only Work On Da Hood. FOR NOW.*",
+   LoadingSubtitle = "by 0_faded (faded539)",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Erica V1"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "https://discord.gg/kWwFhkJFrz", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Home", nil) -- Title, Image
+local MainTabSection = MainTab:CreateSection("Aim Assist")
+
+    Rayfield:Notify({
+   Title = "You Executed Erica V1!",
+   Content = "Have fun! :D",
+   Duration = 5,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!","No"
+         Callback = function()
+         print("The user tapped Okay!"),("The user tapped No")
+      end
+   },
+},
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Aim-Assist",
+   Callback = function()
+
+local aimAssistEnabled = false -- Initially disabled
+local aimTarget = nil
+
+-- Function to toggle aim assist on or off
+function toggleAimAssist(z)
+    aimAssistEnabled = not aimAssistEnabled
+end
+
+-- Function to set the aim target
+function setAimTarget(target)
+    aimTarget = target
+end
+
+-- Function to aim at the target if aim assist is enabled
+function aimAtTarget()
+    if aimAssistEnabled and aimTarget then
+        local sensitivity = 1 -- Adjust sensitivity as needed
+        local maxDistance = 100 -- Adjust maximum distance as needed
+    end
+end
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "Walkspeed",
+   Range = {0, 350},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Dropdown = MainTab:CreateDropdown({
+   Name = "Select Area",
+   Options = {"Bank","Revovler","Double Barrel","Tactical Shotgun"},
+   CurrentOption = {"nil"},
+   MultipleOptions = true,
+   Flag = "Teleport", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+        local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Bank = Instance.new("TextButton")
+local FoodStore = Instance.new("TextButton")
+local Taco = Instance.new("TextButton")
+local GasStation = Instance.new("TextButton")
+local Policestation = Instance.new("TextButton")
+local Dafurniture = Instance.new("TextButton")
+local DaCasino = Instance.new("TextButton")
+local Basketball = Instance.new("TextButton")
+local Bycicle = Instance.new("TextButton")
+local FoodStore2 = Instance.new("TextButton")
+local ThyronesGunstore1 = Instance.new("TextButton")
+local ThyronesGunstore2 = Instance.new("TextButton")
+local UFO = Instance.new("TextButton")
+local ArmorUphills = Instance.new("TextButton")
+local Armordownhills = Instance.new("TextButton")
+local LavaLairStore = Instance.new("TextButton")
+local Gym = Instance.new("TextButton")
+local Hospital = Instance.new("TextButton")
+local Frame_2 = Instance.new("Frame")
+local Flame = Instance.new("TextButton")
+local Vault = Instance.new("TextButton")
+local batdownhill = Instance.new("TextButton")
+local boxing = Instance.new("TextButton")
+local clips = Instance.new("TextButton")
+local exepansive = Instance.new("TextButton")
+local greenscreen = Instance.new("TextButton")
+local hoodkicks = Instance.new("TextButton")
+local hoodfitness = Instance.new("TextButton")
+local koolklub = Instance.new("TextButton")
+local playground = Instance.new("TextButton")
+local sewer = Instance.new("TextButton")
+local subway = Instance.new("TextButton")
+local unjail = Instance.new("TextButton")
+ 
+--Properties:
+ 
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ 
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.0654545426, 0, 0.0270270333, 0)
+Frame.Size = UDim2.new(0, 364, 0, 734)
+Frame.Active = true
+Frame.Draggable = true
+ 
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+TextLabel.Size = UDim2.new(0, 364, 0, 42)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "DaHood Teleport Gui Made By J a s o n#8363"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+ 
+Bank.Name = "Bank"
+Bank.Parent = Frame
+Bank.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Bank.Position = UDim2.new(0.0164835174, 0, 0.0740740746, 0)
+Bank.Size = UDim2.new(0, 164, 0, 58)
+Bank.Text = "Bank"
+Bank.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bank.TextScaled = true
+Bank.TextSize = 14.000
+Bank.TextWrapped = true
+Bank.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-436.293091, 22.9756889, -284.663605)
+end)
+ 
+FoodStore.Name = "Food Store"
+FoodStore.Parent = Frame
+FoodStore.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+FoodStore.Position = UDim2.new(0.516483545, 0, 0.0740740746, 0)
+FoodStore.Size = UDim2.new(0, 164, 0, 58)
+FoodStore.Text = "Food Store Downhills"
+FoodStore.TextColor3 = Color3.fromRGB(0, 0, 0)
+FoodStore.TextScaled = true
+FoodStore.TextSize = 14.000
+FoodStore.TextWrapped = true
+FoodStore.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(299.333008, 49.2826653, -614.396179)
+end)
+ 
+Taco.Name = "Taco"
+Taco.Parent = Frame
+Taco.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Taco.Position = UDim2.new(0.0164835174, 0, 0.268199205, 0)
+Taco.Size = UDim2.new(0, 164, 0, 58)
+Taco.Text = "Taco"
+Taco.TextColor3 = Color3.fromRGB(0, 0, 0)
+Taco.TextScaled = true
+Taco.TextSize = 14.000
+Taco.TextWrapped = true
+Taco.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(555.591248, 51.061409, -494.514923)
+end)
+ 
+GasStation.Name = "Gas Station"
+GasStation.Parent = Frame
+GasStation.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+GasStation.Position = UDim2.new(0.516483545, 0, 0.167305231, 0)
+GasStation.Size = UDim2.new(0, 164, 0, 58)
+GasStation.Text = "Gas Station"
+GasStation.TextColor3 = Color3.fromRGB(0, 0, 0)
+GasStation.TextScaled = true
+GasStation.TextSize = 14.000
+GasStation.TextWrapped = true
+GasStation.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(590.96167, 49.0000458, -259.772461)
+end)
+ 
+Policestation.Name = "Police station"
+Policestation.Parent = Frame
+Policestation.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Policestation.Position = UDim2.new(0.516483545, 0, 0.268199205, 0)
+Policestation.Size = UDim2.new(0, 164, 0, 58)
+Policestation.Text = "Police Station"
+Policestation.TextColor3 = Color3.fromRGB(0, 0, 0)
+Policestation.TextScaled = true
+Policestation.TextSize = 16.000
+Policestation.TextWrapped = true
+Policestation.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-267.225189, 21.7999573, -113.573311)
+end)
+ 
+Dafurniture.Name = "Da furniture"
+Dafurniture.Parent = Frame
+Dafurniture.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Dafurniture.Position = UDim2.new(0.516483545, 0, 0.371647477, 0)
+Dafurniture.Size = UDim2.new(0, 164, 0, 58)
+Dafurniture.Text = "Da Furniture"
+Dafurniture.TextColor3 = Color3.fromRGB(0, 0, 0)
+Dafurniture.TextScaled = true
+Dafurniture.TextSize = 14.000
+Dafurniture.TextWrapped = true
+Dafurniture.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-489.567169, 21.9392605, -99.804039)
+end)
+ 
+DaCasino.Name = "Da Casino"
+DaCasino.Parent = Frame
+DaCasino.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+DaCasino.Position = UDim2.new(0.0164835174, 0, 0.371647537, 0)
+DaCasino.Size = UDim2.new(0, 164, 0, 58)
+DaCasino.Text = "Da Casino"
+DaCasino.TextColor3 = Color3.fromRGB(0, 0, 0)
+DaCasino.TextScaled = true
+DaCasino.TextSize = 14.000
+DaCasino.TextWrapped = true
+DaCasino.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-887.471619, 21.75, -124.488388)
+end)
+ 
+Basketball.Name = "Basketball"
+Basketball.Parent = Frame
+Basketball.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Basketball.Position = UDim2.new(0.516483545, 0, 0.472541511, 0)
+Basketball.Size = UDim2.new(0, 164, 0, 58)
+Basketball.Text = "Basketball"
+Basketball.TextColor3 = Color3.fromRGB(0, 0, 0)
+Basketball.TextScaled = true
+Basketball.TextSize = 14.000
+Basketball.TextWrapped = true
+Basketball.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-931.971558, 22.0998211, -481.859589)
+end)
+ 
+Bycicle.Name = "Bycicle"
+Bycicle.Parent = Frame
+Bycicle.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Bycicle.Position = UDim2.new(0.0164835174, 0, 0.472541511, 0)
+Bycicle.Size = UDim2.new(0, 164, 0, 58)
+Bycicle.Text = "Bike"
+Bycicle.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bycicle.TextScaled = true
+Bycicle.TextSize = 14.000
+Bycicle.TextWrapped = true
+Bycicle.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-825.61615, 21.9998245, -537.159973)
+end)
+ 
+FoodStore2.Name = "Food Store 2"
+FoodStore2.Parent = Frame
+FoodStore2.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+FoodStore2.Position = UDim2.new(0.516483545, 0, 0.574712694, 0)
+FoodStore2.Size = UDim2.new(0, 164, 0, 58)
+FoodStore2.Text = "Food Store Uphills"
+FoodStore2.TextColor3 = Color3.fromRGB(0, 0, 0)
+FoodStore2.TextScaled = true
+FoodStore2.TextSize = 14.000
+FoodStore2.TextWrapped = true
+FoodStore2.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-336.987122, 23.6826477, -298.932709)
+end)
+ 
+ 
+ThyronesGunstore1.Name = "Thyrones Gunstore 1#"
+ThyronesGunstore1.Parent = Frame
+ThyronesGunstore1.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+ThyronesGunstore1.Position = UDim2.new(0.0164835174, 0, 0.574712694, 0)
+ThyronesGunstore1.Size = UDim2.new(0, 164, 0, 58)
+ThyronesGunstore1.Text = "Thyrones Gunstore #1"
+ThyronesGunstore1.TextColor3 = Color3.fromRGB(0, 0, 0)
+ThyronesGunstore1.TextScaled = true
+ThyronesGunstore1.TextSize = 14.000
+ThyronesGunstore1.TextWrapped = true
+ThyronesGunstore1.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(482.312347, 48.0705032, -624.330505)
+end)
+ 
+ThyronesGunstore2.Name = "Thyrones Gunstore 2#"
+ThyronesGunstore2.Parent = Frame
+ThyronesGunstore2.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+ThyronesGunstore2.Position = UDim2.new(0.516483545, 0, 0.678160906, 0)
+ThyronesGunstore2.Size = UDim2.new(0, 164, 0, 58)
+ThyronesGunstore2.Text = "Thyrones Gunstore 2#"
+ThyronesGunstore2.TextColor3 = Color3.fromRGB(0, 0, 0)
+ThyronesGunstore2.TextScaled = true
+ThyronesGunstore2.TextSize = 14.000
+ThyronesGunstore2.TextWrapped = true
+ThyronesGunstore2.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-582.699829, 8.31478119, -736.593994)
+end)
+ 
+UFO.Name = "UFO"
+UFO.Parent = Frame
+UFO.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+UFO.Position = UDim2.new(0.0164835174, 0, 0.678160906, 0)
+UFO.Size = UDim2.new(0, 164, 0, 58)
+UFO.Text = "UFO"
+UFO.TextColor3 = Color3.fromRGB(0, 0, 0)
+UFO.TextScaled = true
+UFO.TextSize = 14.000
+UFO.TextWrapped = true
+UFO.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(66.5427094, 139, -697.639526)
+end)
+ 
+ 
+ArmorUphills.Name = "Armor Uphills"
+ArmorUphills.Parent = Frame
+ArmorUphills.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+ArmorUphills.Position = UDim2.new(0.516483545, 0, 0.776500642, 0)
+ArmorUphills.Size = UDim2.new(0, 164, 0, 58)
+ArmorUphills.Text = "Armor Uphills"
+ArmorUphills.TextColor3 = Color3.fromRGB(0, 0, 0)
+ArmorUphills.TextScaled = true
+ArmorUphills.TextSize = 14.000
+ArmorUphills.TextWrapped = true
+ArmorUphills.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(539.091553, 50.3202744, -637.574951)
+end)
+ 
+ 
+Armordownhills.Name = "Armor downhills"
+Armordownhills.Parent = Frame
+Armordownhills.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Armordownhills.Position = UDim2.new(0.0164835453, 0, 0.776500642, 0)
+Armordownhills.Size = UDim2.new(0, 164, 0, 58)
+Armordownhills.Text = "Armor Downhills"
+Armordownhills.TextColor3 = Color3.fromRGB(0, 0, 0)
+Armordownhills.TextScaled = true
+Armordownhills.TextSize = 14.000
+Armordownhills.TextWrapped = true
+Armordownhills.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-604.207581, 10.3496914, -788.651001)
+end)
+ 
+LavaLairStore.Name = "Lava Lair Store"
+LavaLairStore.Parent = Frame
+LavaLairStore.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+LavaLairStore.Position = UDim2.new(0.516483545, 0, 0.876117468, 0)
+LavaLairStore.Size = UDim2.new(0, 164, 0, 58)
+LavaLairStore.Text = "Lava Lair Store"
+LavaLairStore.TextColor3 = Color3.fromRGB(0, 0, 0)
+LavaLairStore.TextScaled = true
+LavaLairStore.TextSize = 14.000
+LavaLairStore.TextWrapped = true
+LavaLairStore.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-787.381592, -39.6492004, -933.489075)
+end)
+ 
+ 
+Gym.Name = "Gym"
+Gym.Parent = Frame
+Gym.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Gym.Position = UDim2.new(0.0164835453, 0, 0.876117468, 0)
+Gym.Size = UDim2.new(0, 164, 0, 58)
+Gym.Text = "Gym"
+Gym.TextColor3 = Color3.fromRGB(0, 0, 0)
+Gym.TextScaled = true
+Gym.TextSize = 14.000
+Gym.TextWrapped = true
+Gym.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-77.2380142, 22.7002907, -638.656982)
+end)
+ 
+ 
+Hospital.Name = "Hospital"
+Hospital.Parent = Frame
+Hospital.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Hospital.Position = UDim2.new(0.0164835174, 0, 0.167305231, 0)
+Hospital.Size = UDim2.new(0, 164, 0, 58)
+Hospital.Text = "Hospital"
+Hospital.TextColor3 = Color3.fromRGB(0, 0, 0)
+Hospital.TextScaled = true
+Hospital.TextSize = 14.000
+Hospital.TextWrapped = true
+ 
+Hospital.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(103.044769, 22.7999954, -485.358582)
+end)
+ 
+Frame_2.Parent = ScreenGui
+Frame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.Position = UDim2.new(0.784848511, 0, 0.239557743, 0)
+Frame_2.Size = UDim2.new(0, 355, 0, 622)
+Frame_2.Active = true
+Frame_2.Draggable = true
+ 
+Flame.Name = "Flame"
+Flame.Parent = Frame_2
+Flame.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Flame.Position = UDim2.new(0.0177514795, 0, 0.565008521, 0)
+Flame.Size = UDim2.new(0, 158, 0, 57)
+Flame.Font = Enum.Font.SourceSans
+Flame.Text = "Flame"
+Flame.TextColor3 = Color3.fromRGB(0, 0, 0)
+Flame.TextScaled = true
+Flame.TextSize = 14.000
+Flame.TextWrapped = true
+Flame.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-153.65274, 53.8106155, -96.95858)
+end)
+ 
+Vault.Name = "Vault"
+Vault.Parent = Frame_2
+Vault.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Vault.Position = UDim2.new(0.531694353, 0, 0.560185432, 0)
+Vault.Size = UDim2.new(0, 158, 0, 57)
+Vault.Font = Enum.Font.SourceSans
+Vault.Text = "Vault"
+Vault.TextColor3 = Color3.fromRGB(0, 0, 0)
+Vault.TextScaled = true
+Vault.TextSize = 14.000
+Vault.TextWrapped = true
+Vault.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-503.625549, 23.1576424, -283.936401)
+end)
+ 
+batdownhill.Name = "bat downhill"
+batdownhill.Parent = Frame_2
+batdownhill.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+batdownhill.Position = UDim2.new(0.0177514795, 0, 0.28161943, 0)
+batdownhill.Size = UDim2.new(0, 158, 0, 57)
+batdownhill.Font = Enum.Font.SourceSans
+batdownhill.Text = "Buy Bat"
+batdownhill.TextColor3 = Color3.fromRGB(0, 0, 0)
+batdownhill.TextScaled = true
+batdownhill.TextSize = 14.000
+batdownhill.TextWrapped = true
+batdownhill.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-83.1895905, 21.75, -285.608185)
+end)
+ 
+boxing.Name = "boxing"
+boxing.Parent = Frame_2
+boxing.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+boxing.Position = UDim2.new(0.531694353, 0, 0.697627127, 0)
+boxing.Size = UDim2.new(0, 158, 0, 57)
+boxing.Font = Enum.Font.SourceSans
+boxing.Text = "Boxing"
+boxing.TextColor3 = Color3.fromRGB(0, 0, 0)
+boxing.TextScaled = true
+boxing.TextSize = 14.000
+boxing.TextWrapped = true
+boxing.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-232.054153, 22.0577793, -1118.96875)
+end)
+ 
+clips.Name = "clips"
+clips.Parent = Frame_2
+clips.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+clips.Position = UDim2.new(0.0177514795, 0, 0.831461072, 0)
+clips.Size = UDim2.new(0, 158, 0, 57)
+clips.Font = Enum.Font.SourceSans
+clips.Text = "Clips"
+clips.TextColor3 = Color3.fromRGB(0, 0, 0)
+clips.TextScaled = true
+clips.TextSize = 14.000
+clips.TextWrapped = true
+clips.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4.21504116, 21.75, -90.6753998)
+end)
+ 
+exepansive.Name = "exepansive"
+exepansive.Parent = Frame_2
+exepansive.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+exepansive.Position = UDim2.new(0.0177514814, 0, 0.146002561, 0)
+exepansive.Size = UDim2.new(0, 158, 0, 57)
+exepansive.Font = Enum.Font.SourceSans
+exepansive.Text = "Lmg Place"
+exepansive.TextColor3 = Color3.fromRGB(0, 0, 0)
+exepansive.TextScaled = true
+exepansive.TextSize = 14.000
+exepansive.TextWrapped = true
+exepansive.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-625.950806, 23.2457409, -267.33313)
+end)
+ 
+greenscreen.Name = "green screen"
+greenscreen.Parent = Frame_2
+greenscreen.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+greenscreen.Position = UDim2.new(0.0177514795, 0, 0.697627068, 0)
+greenscreen.Size = UDim2.new(0, 158, 0, 57)
+greenscreen.Font = Enum.Font.SourceSans
+greenscreen.Text = "Green Screen Place"
+greenscreen.TextColor3 = Color3.fromRGB(0, 0, 0)
+greenscreen.TextScaled = true
+greenscreen.TextSize = 14.000
+greenscreen.TextWrapped = true
+greenscreen.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-505.897461, 48.602375, -213.373596)
+end)
+ 
+hoodkicks.Name = "hood kicks"
+hoodkicks.Parent = Frame_2
+hoodkicks.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+hoodkicks.Position = UDim2.new(0.0177514795, 0, 0.00893997401, 0)
+hoodkicks.Size = UDim2.new(0, 158, 0, 57)
+hoodkicks.Font = Enum.Font.SourceSans
+hoodkicks.Text = "Hood Kicks"
+hoodkicks.TextColor3 = Color3.fromRGB(0, 0, 0)
+hoodkicks.TextScaled = true
+hoodkicks.TextSize = 14.000
+hoodkicks.TextWrapped = true
+hoodkicks.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-223.948868, 21.8458023, -411.636627)
+end)
+ 
+ 
+hoodfitness.Name = "hoodfitness"
+hoodfitness.Parent = Frame_2
+hoodfitness.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+hoodfitness.Position = UDim2.new(0.531694353, 0, 0.831461072, 0)
+hoodfitness.Size = UDim2.new(0, 158, 0, 57)
+hoodfitness.Font = Enum.Font.SourceSans
+hoodfitness.Text = "Hoodfitness"
+hoodfitness.TextColor3 = Color3.fromRGB(0, 0, 0)
+hoodfitness.TextScaled = true
+hoodfitness.TextSize = 14.000
+hoodfitness.TextWrapped = true
+hoodfitness.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.8536682, 22.7002907, -634.811951)
+end)
+ 
+koolklub.Name = "kool klub"
+koolklub.Parent = Frame_2
+koolklub.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+koolklub.Position = UDim2.new(0.531694353, 0, 0.28161943, 0)
+koolklub.Size = UDim2.new(0, 158, 0, 57)
+koolklub.Font = Enum.Font.SourceSans
+koolklub.Text = "Kool Klub"
+koolklub.TextColor3 = Color3.fromRGB(0, 0, 0)
+koolklub.TextScaled = true
+koolklub.TextSize = 14.000
+koolklub.TextWrapped = true
+koolklub.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-265.413391, 55.3804436, -454.11026)
+end)
+ 
+playground.Name = "playground"
+playground.Parent = Frame_2
+playground.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+playground.Position = UDim2.new(0.531694353, 0, 0.00893997401, 0)
+playground.Size = UDim2.new(0, 158, 0, 57)
+playground.Font = Enum.Font.SourceSans
+playground.Text = "Playground"
+playground.TextColor3 = Color3.fromRGB(0, 0, 0)
+playground.TextScaled = true
+playground.TextSize = 14.000
+playground.TextWrapped = true
+playground.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-230.296829, 22.1498718, -747.098389)
+end)
+ 
+sewer.Name = "sewer"
+sewer.Parent = Frame_2
+sewer.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+sewer.Position = UDim2.new(0.531694353, 0, 0.421621978, 0)
+sewer.Size = UDim2.new(0, 158, 0, 57)
+sewer.Font = Enum.Font.SourceSans
+sewer.Text = "Sewer"
+sewer.TextColor3 = Color3.fromRGB(0, 0, 0)
+sewer.TextScaled = true
+sewer.TextSize = 14.000
+sewer.TextWrapped = true
+sewer.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(103.128914, -26.7500305, -274.729767)
+end)
+ 
+subway.Name = "subway"
+subway.Parent = Frame_2
+subway.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+subway.Position = UDim2.new(0.0177514795, 0, 0.421621978, 0)
+subway.Size = UDim2.new(0, 158, 0, 57)
+subway.Font = Enum.Font.SourceSans
+subway.Text = "Subway"
+subway.TextColor3 = Color3.fromRGB(0, 0, 0)
+subway.TextScaled = true
+subway.TextSize = 14.000
+subway.TextWrapped = true
+subway.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-428.974976, -21.25, 44.8718376)
+end)
+ 
+unjail.Name = "unjail"
+unjail.Parent = Frame_2
+unjail.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+unjail.Position = UDim2.new(0.531694353, 0, 0.146002561, 0)
+unjail.Size = UDim2.new(0, 158, 0, 57)
+unjail.Font = Enum.Font.SourceSans
+unjail.Text = "unjail"
+unjail.TextColor3 = Color3.fromRGB(0, 0, 0)
+unjail.TextScaled = true
+unjail.TextSize = 14.000
+unjail.TextWrapped = true
+unjail.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-271.151978, 21.75, -243.19165)
+end)
+   end,
+})
+
+local Tab = Window:CreateTab("Others", nil) -- Title, Image
+local Section = OthersTab:CreateSection("Fly")
+
+local Button = OthersTab:CreateButton({
+   Name = "Fly",
+   Callback = function()
+repeat wait() 
+    until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+local mouse = game.Players.LocalPlayer:GetMouse() 
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer 
+local torso = plr.Character.Torso 
+local flying = false
+local deb = true 
+local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+local maxspeed = 50 
+local speed = 0 
+ 
+function Fly() 
+local bg = Instance.new("BodyGyro", torso) 
+bg.P = 9e4 
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+bg.cframe = torso.CFrame 
+local bv = Instance.new("BodyVelocity", torso) 
+bv.velocity = Vector3.new(0,0.1,0) 
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+repeat wait() 
+plr.Character.Humanoid.PlatformStand = true 
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+speed = speed+.5+(speed/maxspeed) 
+if speed > maxspeed then 
+speed = maxspeed 
+end 
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+speed = speed-1 
+if speed < 0 then 
+speed = 0 
+end 
+end 
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+else 
+bv.velocity = Vector3.new(0,0.1,0) 
+end 
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+until not flying 
+ctrl = {f = 0, b = 0, l = 0, r = 0} 
+lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+speed = 0 
+bg:Destroy() 
+bv:Destroy() 
+plr.Character.Humanoid.PlatformStand = false 
+end 
+mouse.KeyDown:connect(function(key) 
+if key:lower() == "e" then 
+if flying then flying = false 
+else 
+flying = true 
+Fly() 
+end 
+elseif key:lower() == "w" then 
+ctrl.f = 1 
+elseif key:lower() == "s" then 
+ctrl.b = -1 
+elseif key:lower() == "a" then 
+ctrl.l = -1 
+elseif key:lower() == "d" then 
+ctrl.r = 1 
+end 
+end) 
+mouse.KeyUp:connect(function(key) 
+if key:lower() == "w" then 
+ctrl.f = 0 
+elseif key:lower() == "s" then 
+ctrl.b = 0 
+elseif key:lower() == "a" then 
+ctrl.l = 0 
+elseif key:lower() == "d" then 
+ctrl.r = 0 
+end 
+end)
+Fly()
+   end,
+})
+
+
+local MiscTab = Window:CreateTab("Misc" , nil)
+local Section = MiscTab:CreateSection("Misc")
+
+local Toggle = MiscTab:CreateToggle({
+   Name = "AutoFarm Cash",
+   CurrentValue = false,
+   Flag = "toggleexample", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        loadstring(game:HttpGet("https://pastebin.com/raw/Zx061kiT", true))()
+   end,
+})
